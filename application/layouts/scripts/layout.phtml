@@ -1,0 +1,42 @@
+<?php
+error_reporting(E_ALL|E_STRICT);
+ini_set('display_errors', 'on');
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Zend Framework Tutorial');
+echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<?php echo $this->headMeta(); ?>
+<?php echo $this->headTitle(); ?>
+<?php echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/site.css')
+							->prependStylesheet('http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css'); ?>
+
+<?php echo $this->jQuery()
+	->setVersion('1.9.0')
+	->setUiVersion('1.10.0')
+	->enable()
+	->uiEnable(); ?>
+<?php echo $this->headScript()->prependFile($this->baseUrl().'/js/scripts.js'); ?>
+
+</head>
+<body>
+
+	<div id="header"> 
+		<div id="logged-in-as">
+			<?php echo $this->loggedInAs(); ?> 
+		</div>
+	</div>
+	<div id="messages">
+		<?php 
+		if (is_array($this->messages))
+		foreach ($this->messages as $message) {
+			echo '<div>'.$message.'</div>';
+		} ?>
+	</div>
+	<div id="content">
+		<?php echo $this->layout()->content; ?>
+	</div>
+	<p><a href="/">Home</a></p>
+</body>
+</html>

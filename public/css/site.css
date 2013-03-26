@@ -1,0 +1,56 @@
+@CHARSET "ISO-8859-1";
+
+
+.clear { clear:both; }
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+} 
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+body,html {
+margin: 0 5px;
+font-family: Verdana,sans-serif;
+}
+h1 {
+font-size: 1.4em;
+color: #008000;
+}
+a {
+color: #008000;
+}
+/* Table */
+th {
+text-align: left;
+}
+td, th {
+padding-right: 5px;
+}
+/* style form */
+form dl.zend_form:after {
+    content: "";
+    display: table;
+	clear:both;
+}
+form dt {
+width: 100px;
+display: block;
+float: left;
+clear: left;
+}
+form#password dt{ width:200px;}
+form dd {
+margin-left: 0;
+float: left;
+}
+form #submitbutton {
+margin-left: 100px;
+}
+
+#content { display:none;}
