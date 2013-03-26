@@ -1,0 +1,28 @@
+<?php
+	$this->title = "My Albums";
+	$this->headTitle($this->title);
+?>
+<p><a class="ajaxlink" href="<?php echo $this->url(array('controller'=>'album', 'action'=>'index'));?>">Albums</a></p>
+<script>
+
+</script>
+<form id="getalbum_frm">
+<label>ID:</label><input type="text" id="id" name="albumID" />
+<input type="button" name="submit" value="get album" id="getalbum_btn" />
+</form>
+<input type="button" id="load_albums" value="load albums" />
+<div id="ajax">
+
+     
+    <div id="content"></div>
+     
+    <form method="post" action="/hello/world">
+    Pick your Date: <?php echo $this->datePicker("dp1",
+                                                 '',
+                                                 array(
+                                                    'defaultDate' =>
+                                                        date('m/d/Y', time())));?>
+    <input type="submit" value="Submit" />
+    </form>
+
+</div>
